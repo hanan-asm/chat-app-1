@@ -9,7 +9,7 @@ public class ChatServer {
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                System.out.println("New client connected");
+                System.out.println("New person connected");
 
                 new Thread(new ClientHandler(socket)).start();
             }
@@ -19,6 +19,7 @@ public class ChatServer {
         }
     }
 }
+
 
 
 

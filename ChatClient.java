@@ -12,13 +12,13 @@ public class ChatClient {
             if (Character.isUpperCase(c)) u=true;
             else if (Character.isLowerCase(c)) l=true;
             else if (Character.isDigit(c)) d=true;
-            else if (c=='£' || c=='%') s=true;
+            else if (c=='#' || c=='%') s=true;
         }
 
         if (!u) return "Missing uppercase letter";
         if (!l) return "Missing lowercase letter";
         if (!d) return "Missing digit";
-        if (!s) return "Missing £ or %";
+        if (!s) return "Missing # or %";
 
         return "VALID";
     }
@@ -51,12 +51,12 @@ public class ChatClient {
 
             String response = in.readLine();
             if (!"SUCCESS".equals(response)) {
-                System.out.println("Login failed");
+                System.out.println("Login failed!");
                 socket.close();
                 return;
             }
 
-            System.out.println("Login successful! Welcome " + username);
+            System.out.println("Login successful!" + username);
 
             new Thread(() -> {
                 try {
@@ -77,6 +77,7 @@ public class ChatClient {
         }
     }
 }
+
 
 
 
